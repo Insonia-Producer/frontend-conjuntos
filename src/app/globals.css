@@ -14,13 +14,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #9C6BFF;
+    --background-start: #232162;
+    --background-end: #79CEC0;
     --foreground: #ededed;
   }
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(var(--background-start), var(--background-end));
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+

@@ -1,95 +1,55 @@
-import Image from "next/image";
+
+import { Tiny5, Bagel_Fat_One, Braah_One } from 'next/font/google'
+import CardRotation from "./components/carta";
+
+const tiny5 = Tiny5({
+  weight: ["400"]
+})
+
+const bagel = Bagel_Fat_One({
+  weight: ['400']
+})
+
+const braah = Braah_One({
+  weight: ['400']
+})
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <h1 className="text-8xl font-extrabold text-[#DCB826] ">Conjuntos</h1>
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
+    <div className="flex items-center justify-center min-h-screen  w-full p-8 pb-20 gap-16">
+      <main className="flex flex-col gap-[32px] items-center justify-center">
+        <div className='flex flex-col items-center'>
+          <h1 className={`${bagel.className} text-[112px] font-extrabold text-[#DCB826] text-shadow-lg`}>Conjuntos</h1>
+          <h3 className={`${braah.className} text-2xl text-[#D7EEF3]`}>Colecione. Sabote. Blefe.</h3>
+          <p className={`${braah.className} text-[#79CEC0] mt-4`}>Conjuntos é um jogo rápido, caótico e viciante — ideal pra perder amizades ou ganhar respeito.</p>
+        </div>
+        <div className="w-full h-[400px] flex justify-center items-center">
+          <CardRotation />
+        </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+            className={`rounded-sm transition-colors flex items-center justify-center bg-[#232162] text-background gap-2 hover:bg-[#79CEC0] h-12 text-2xl px-4 ${tiny5.className}`}
             href="/cards"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Cartas
+            Baixar Manual
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
+            className={`rounded-sm transition-colors flex items-center justify-center bg-[#232162] text-background gap-2 hover:bg-[#79CEC0] h-12 text-2xl px-4 ${tiny5.className}`}
+            href="/cards"
             rel="noopener noreferrer"
           >
-            Read our docs
+            Contador de Rodadas
+          </a>
+          <a
+            className={`rounded-sm border border-[#232162] transition-colors flex items-center justify-center bg-[#DCB826] gap-2 hover:bg-[#79CEC0] h-12 text-2xl text-[#232162] px-4 ${tiny5.className}`}
+            href="/cards"
+            rel="noopener noreferrer"
+          >
+            Quero Jogar Agora!
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
