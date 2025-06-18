@@ -3,15 +3,18 @@ import { Tiny5, Bagel_Fat_One, Braah_One } from 'next/font/google'
 import CardRotation from "./components/carta";
 
 const tiny5 = Tiny5({
-  weight: ["400"]
+  weight: ["400"],
+  subsets: ["latin"]
 })
 
 const bagel = Bagel_Fat_One({
-  weight: ['400']
+  weight: ['400'],
+  subsets: ["latin"]
 })
 
 const braah = Braah_One({
-  weight: ['400']
+  weight: ['400'],
+  subsets: ["latin"]
 })
 
 export default function Home() {

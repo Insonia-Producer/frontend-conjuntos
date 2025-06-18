@@ -18,7 +18,7 @@ const from = (_i: number) => ({ x: 10, rot: 0, scale: 1.5, y: -1000 })
 const trans = (r: number, s: number) =>
     `perspective(1500px) rotateX(25deg) rotateY(${r / 10}deg) rotateZ(${r}deg) scale(${s})`
 
-export function Deck({ cards }) {
+export function Deck({ cards }: { cards: string[] }) {
     const [gone] = useState(() => new Set()) // The set flags all the cards that are flicked out
     const [props, api] = useSprings(cards.length, i => ({
         ...to(i),
