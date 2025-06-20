@@ -27,7 +27,7 @@ export default function Home() {
           </div>
         </div>
         <div className='max-sm:hidden'>
-          teste
+          test
         </div>
         <div className="flex md:gap-4 gap-2 items-center flex-col sm:flex-row max-sm:w-[280px]">
           <a
