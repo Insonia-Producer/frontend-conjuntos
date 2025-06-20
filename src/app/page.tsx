@@ -9,7 +9,8 @@ const bagel = Bagel_Fat_One({
 })
 
 const poppins = Poppins({
-  weight: ['400', '700']
+  weight: ['400', '700'],
+  subsets: ['latin']
 })
 
 export default function Home() {
