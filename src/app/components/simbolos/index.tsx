@@ -1,6 +1,15 @@
-export default function SvgSimbolo({ cor, simbolo }) {
-    const Sin
+
+interface SvgSimboloProps {
+    cor: string;
+    simbolo: string;
+}
+
+export default function SvgSimbolo({ cor, simbolo }: SvgSimboloProps) {
+
     return (
-        <div></div>
+        <div>
+            <p>{cor}</p>
+            <p>{simbolo}</p>
+        </div>
     )
 }
