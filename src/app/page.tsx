@@ -33,7 +33,7 @@ export default function Home() {
           <a
             className='max-sm:w-full rounded-lg border border-[#79CEC0] transition-colors flex items-center justify-center bg-transparent gap-2 hover:bg-[#79CEC0] h-12 md:text-2xl px-4'
             download="Manual-Conjuntos.pdf"
-            href='./'
+            href="/Manual-Conjuntos.pdf"
             rel="noopener noreferrer"
           >
             Baixar Manual
