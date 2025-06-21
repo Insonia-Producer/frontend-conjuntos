@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { Bagel_Fat_One } from 'next/font/google';
 import { useEffect, useState } from 'react';
-import { FaArrowRotateRight, FaPlus } from 'react-icons/fa6';
+import { FaArrowLeft, FaArrowRotateRight, FaPlus } from 'react-icons/fa6';
 import { FaMinus } from 'react-icons/fa6';
 import especialUm from '../../../public/cards/especial-1.png';
 import especialDois from '../../../public/cards/especial-2.png';
@@ -76,11 +76,16 @@ export default function ContadorRodadas() {
     const finalizarPartida = () => {
         setAdicionalTurnos(false);
         setRodadas(0)
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('especial', '0');
+            localStorage.setItem('rodadas', '1');
+        }
     }
 
     return (
         <div className='md:py-12 py-4'>
             <div className='px-4 md:px-12 flex flex-col items-center md:gap-10 gap-4'>
+                <a className='absolute md:top-10 md:left-10 top-6 left-6 cursor-pointer md:text-3xl text-xl' href='./'><FaArrowLeft /></a>
                 <h1 className={`${bagel.className} md:text-5xl text-3xl text-gray-50 text-shadow-lg text-center max-sm:w-56`}>
                     Contador de Rodadas
                 </h1>
@@ -112,14 +117,14 @@ export default function ContadorRodadas() {
                         </button>
                         <button
                             className='cursor-pointer rounded-lg border border-[#79CEC0] font-bold transition-colors bg-[#79CEC0] hover:bg-transparent hover:text-[#79CEC0] md:h-12 h-10 md:text-2xl text-gray-50 px-4 disabled:cursor-not-allowed disabled:text-gray-50 disabled:border-none disabled:bg-gray-400'
-                            onClick={() => finalizarPartida()}
-                            disabled={!(adicionalTurnos)}>
+                            onClick={() => setAdicionalTurnos(false)}
+                            disabled={!(adicionalTurnos && rodadas <= 10)}>
                             <FaArrowRotateRight />
                         </button>
                     </div>
                     <button
                         className='cursor-pointer rounded-lg border border-[#79CEC0] font-bold transition-colors bg-[#79CEC0] hover:bg-transparent hover:text-[#79CEC0] md:h-12 h-10 md:text-2xl text-gray-50 px-4 disabled:cursor-not-allowed disabled:text-gray-50 disabled:border-none disabled:bg-gray-400'
-                        onClick={() => setAdicionalTurnos(false)}
+                        onClick={() => finalizarPartida()}
                         disabled={!(rodadas == (adicionalTurnos ? 12 : 10))}>
                         Finalizar Partida
                     </button>
