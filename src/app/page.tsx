@@ -32,7 +32,7 @@ export default function Home() {
         <div className="flex md:gap-4 gap-2 items-center flex-col sm:flex-row max-sm:w-[280px]">
           <a
             className='max-sm:w-full rounded-lg border border-[#79CEC0] transition-colors flex items-center justify-center bg-transparent gap-2 hover:bg-[#79CEC0] h-12 md:text-2xl px-4'
-            download="Manual-Conjuntos.pdf  "
+            download="Manual-Conjuntos.pdf"
             href='./'
             rel="noopener noreferrer"
           >
